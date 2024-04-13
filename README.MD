@@ -17,7 +17,7 @@
 <br>
 
 <p align="center">
-  <img src=".github/preview.jpg" width="100%">
+  <img src="./.github/bora-codar-09.jpeg" width="100%">
 </p>
 
 ## 🚀 Tecnologias
