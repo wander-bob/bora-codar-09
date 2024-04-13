@@ -1,0 +1,177 @@
+:root{
+  font-size: 62.5%;
+  --highlight: #7C3AED;
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --surface-primary: #FFFFFF;
+  --surface-secondary: #EDE9FE;
+  --graphic-elements: #94A3B8;
+  --bg-color: #F8FAFC;
+  --chart-gradient: linear-gradient(rgba(124, 58, 237, 0.5), rgba(124, 58, 237, 0)); 
+}
+* { 
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+}
+body{
+  background: var(--bg-color);
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  padding-block: 16rem;
+}
+#container {
+  border-radius: 1.6rem;
+  box-shadow: 0 0.4rem 3.2rem 0 rgba(15, 23, 42, 0.15);
+  padding: 6.4rem 8rem;
+  display: grid;
+  gap: 6.4rem;
+}
+section h2 {
+  font-size: 2rem;
+  line-height: 2.4rem;
+}
+.currency > .wrapper {
+  display: flex;
+  gap: 1.6rem;
+  margin-top: 1.6rem;
+}
+
+.convert {
+  width: 27rem;
+  background: var(--surface-primary);
+  outline: 1px solid var(--graphic-elements);
+  padding: 1.6rem;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.convert:hover,
+.convert:has(:focus) {
+  outline: 1px solid var(--highlight);
+}
+.ammount {
+  border: none;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: var(--text-primary);
+  width: 50%;
+}
+.ammount:focus{
+  outline: 0;
+}
+.dropdown {
+  max-width: 13rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.selected {
+  padding: 1.6rem;
+  border-radius: 0 .8rem .8rem 0;
+  position: relative;
+}
+.selected::before{
+  content: "";
+  height: 2.4rem;
+  width: 0.1rem;
+  background-color: var(--graphic-elements);
+  position: absolute;
+  left: 0;
+}
+.selected::after {
+  content: "";
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url("../assets/chevron-down.svg") no-repeat;
+}
+.exchange-icon{
+  display: flex;
+  align-items: center;
+}
+.dropdown > ul{
+  display: none;
+  background-color: var(--surface-primary);
+  box-shadow: 0 0.4rem 3.2rem 0 rgba(15, 23, 42, 0.15);
+  list-style: none;
+  border-radius: 0.8rem;
+  width: 16rem;
+  max-height: 17rem;
+  margin-top: 1rem;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 1;
+}
+.dropdown:hover > ul {
+  display: block;
+}
+.dropdown  > ul > li {
+  padding: 1.2rem 1.6rem;
+}
+.dropdown .selected, .dropdown > ul > li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+.dropdown .selected:hover, .dropdown > ul > li:hover{
+  background-color: var(--surface-secondary);
+} 
+.fi.fis {
+  font-size: 2.4rem;
+  border-radius: 50%;
+}
+.exchange-rate > .wrapper {
+  margin-top: 2.4rem;
+  height: 35.6rem;
+}
+.tooltip {
+  background-color: var(--surface-primary);
+  box-shadow: 0 4rem 1.6rem rgb(14 23 43 / .15);
+  border-radius: .4rem;
+  padding: 0.8rem;
+}
+.chart-controls {
+  display: flex;
+  justify-content: space-between;
+  margin: -2.2rem 0.8rem 0 4rem;
+}
+.chart-controls button{
+  background-color: transparent;
+  border: 0;
+  width: 4rem;
+  height: 2.4rem;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  text-align: center;
+  cursor: pointer;
+
+}
+.chart-controls button:hover,
+.chart-controls button.active{
+  background-color: var(--highlight);
+  color: var(--surface-primary);
+  border-radius: 999px;
+  padding: .4rem .8rem;
+}
+@media (max-width: 48rem) {
+  #container {
+    padding: 1.6rem;
+    gap: 3.2rem;
+  }
+  section h2{
+    font-size: 1.6rem;
+  }
+  .currency .wrapper {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+  }
+}
